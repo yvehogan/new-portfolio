@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: "#0b0a14" };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable} ${jetbrains.variable} antialiased`}>
       <body>
