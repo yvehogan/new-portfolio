@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import { education, mentoring, profile, skills } from "@/lib/data";
 import { ArrowUpRight } from "./Icons";
 import { Reveal } from "./Reveal";
@@ -29,11 +28,20 @@ export function About() {
   return (
     <section id="about" className="py-20 md:py-28">
       <div className="wrap">
-        <div className="grid items-start gap-16 lg:grid-cols-2">
+        <div className="grid items-start gap-x-16 gap-y-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <Eyebrow>About me</Eyebrow>
             <Heading>Design sense, engineering discipline.</Heading>
-            <div className="grid gap-[18px] text-muted [&_strong]:font-medium [&_strong]:text-fg">
+            <div className="mt-7">
+              <Magnetic>
+                <a href={profile.cv} target="_blank" rel="noopener noreferrer" className={btn.primary}>
+                  View my CV <ArrowUpRight className={btn.arrow} />
+                </a>
+              </Magnetic>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid gap-[18px] text-[18px] text-muted lg:pt-10 [&_strong]:font-medium [&_strong]:text-fg">
               <p>
                 Hi, I&apos;m Evelyn, a <strong>Frontend Engineer with 4+ years of experience</strong> building production web applications in React,
                 Next.js and TypeScript for banking, government and EdTech.
@@ -48,29 +56,30 @@ export function About() {
                 Engineering.
               </p>
             </div>
-            <div className="mt-7">
-              <Magnetic>
-                <a href={profile.cv} target="_blank" rel="noopener noreferrer" className={btn.primary}>
-                  View my CV <ArrowUpRight className={btn.arrow} />
-                </a>
-              </Magnetic>
-            </div>
           </Reveal>
+        </div>
 
-          <div className="grid gap-4">
+        <div className="mt-20">
+          <Reveal>
+            <h3 className="mb-6 font-mono text-[13.5px] font-medium uppercase tracking-[0.14em] text-dim">What I work with</h3>
+          </Reveal>
+          <div className="border-t border-line">
             {skills.map((group, i) => (
-              <Reveal key={group.title} delay={i * 0.07}>
-                <div
-                  style={{ "--k": group.color } as CSSProperties}
-                  className="rounded-[22px] border border-line bg-panel/60 px-6 py-[22px] transition duration-500 ease-spring hover:translate-x-1.5 hover:border-line-2"
-                >
-                  <h3 className="mb-[13px] flex items-center gap-2.5 font-mono text-[13px] font-medium uppercase tracking-[0.12em] text-(--k) before:size-[9px] before:rounded-[3px] before:bg-(--k)">
-                    {group.title}
-                  </h3>
-                  <ul className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <li key={item} className="rounded-[11px] bg-white/5 px-[13px] py-[7px] text-[14.5px] font-medium transition duration-300 ease-spring hover:-translate-y-[3px] hover:bg-white/10">
-                        {item}
+              <Reveal key={group.title} delay={i * 0.05}>
+                <div className="group grid gap-x-10 gap-y-3 border-b border-line py-7 transition-colors duration-500 hover:border-accent/50 lg:grid-cols-[240px_1fr] lg:items-baseline lg:py-9">
+                  <h4 className="flex items-baseline gap-4 font-mono text-[13px] uppercase tracking-[0.12em] text-dim transition-colors duration-300 group-hover:text-accent">
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    <span>{group.title}</span>
+                  </h4>
+                  <ul className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-display text-[clamp(21px,2.7vw,36px)] font-semibold leading-[1.25] tracking-[-0.025em]">
+                    {group.items.map((item, j) => (
+                      <li key={item} className="flex items-baseline gap-3">
+                        <span className="cursor-default text-fg/75 transition-colors duration-300 hover:text-accent">{item}</span>
+                        {j < group.items.length - 1 && (
+                          <span aria-hidden="true" className="text-[0.7em] text-fg/20">
+                            /
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>

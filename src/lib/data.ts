@@ -191,11 +191,11 @@ export const experience = [
 ];
 
 export const skills = [
-  { title: "Frontend", color: "var(--color-accent)", items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Context API", "Responsive design"] },
-  { title: "APIs", color: "var(--color-accent)", items: ["REST APIs", "API integration", "Error handling", "Postman"] },
-  { title: "AI", color: "var(--color-accent)", items: ["AI tutoring & summaries", "Chat assistants", "Testing AI responses"] },
-  { title: "Cloud & DevOps", color: "var(--color-accent)", items: ["AWS (EC2, S3, CloudFront, IAM)", "Azure", "Google Cloud", "Docker", "GitHub Actions CI/CD"] },
-  { title: "Tools & practice", color: "var(--color-accent)", items: ["Git & GitHub", "Figma", "Code review", "Agile / Scrum", "Technical documentation"] },
+  { title: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Context API", "Responsive design"] },
+  { title: "APIs", items: ["REST APIs", "API integration", "Error handling", "Postman"] },
+  { title: "AI", items: ["AI tutoring & summaries", "Chat assistants", "Testing AI responses"] },
+  { title: "Cloud & DevOps", items: ["AWS (EC2, S3, CloudFront, IAM)", "Azure", "Google Cloud", "Docker", "GitHub Actions CI/CD"] },
+  { title: "Tools & practice", items: ["Git & GitHub", "Figma", "Code review", "Agile / Scrum", "Technical documentation"] },
 ];
 
 export const education = [
