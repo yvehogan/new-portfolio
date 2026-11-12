@@ -25,7 +25,8 @@
   --animate-rise: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
   --animate-blink: blink 1s steps(2) infinite;
   --animate-fade-up: fade-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-  --animate-marquee: marquee 38s linear infinite;
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-marquee-reverse: marquee 46s linear infinite reverse;
   --animate-ping-soft: ping-soft 2s infinite;
 
   @keyframes float { 50% { translate: 0 -12px; } }

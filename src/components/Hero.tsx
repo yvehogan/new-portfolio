@@ -33,11 +33,19 @@ const lines: ReactNode[] = [
   </>,
   <>
     {"  "}
-    <P>stack</P>: [{list(["React", "Next.js", "TypeScript", "Tailwind CSS"])}],
+    <P>stack</P>: [{list(["React", "Next.js"])},
+  </>,
+  <>
+    {"          "}
+    {list(["TypeScript", "Tailwind CSS"])}],
   </>,
   <>
     {"  "}
-    <P>builds</P>: [{list(["banking", "government", "EdTech", "AI products"])}],
+    <P>builds</P>: [{list(["banking", "government"])},
+  </>,
+  <>
+    {"           "}
+    {list(["EdTech", "AI products"])}],
   </>,
   <>
     {"  "}
@@ -56,7 +64,7 @@ const lines: ReactNode[] = [
 
 function CodeWindow() {
   return (
-    <Tilt max={3} className="overflow-hidden rounded-2xl border border-line-2 bg-panel text-left shadow-[0_40px_90px_-40px_#000]">
+    <Tilt max={7} className="overflow-hidden rounded-2xl border border-line-2 bg-panel text-left shadow-[0_40px_90px_-40px_#000]">
       <div className="flex items-center border-b border-line bg-white/[0.02]">
         <div className="flex gap-[7px] px-4">
           <i className="size-[11px] rounded-full bg-white/15" />
@@ -65,7 +73,7 @@ function CodeWindow() {
         </div>
         <span className="border-x border-line border-b-2 border-b-accent bg-panel px-4 py-2.5 font-mono text-[12.5px] text-fg">evelyn.ts</span>
         <span className="hidden border-r border-line px-4 py-2.5 font-mono text-[12.5px] text-dim sm:block">projects.ts</span>
-        <span className="hidden border-r border-line px-4 py-2.5 font-mono text-[12.5px] text-dim sm:block">README.md</span>
+        <span className="hidden border-r border-line px-4 py-2.5 font-mono text-[12.5px] text-dim sm:block lg:hidden xl:block">README.md</span>
       </div>
 
       <pre className="overflow-x-auto py-5 font-mono text-[13px] leading-[1.85] text-[#d9d5ca] sm:text-[13.5px]">
@@ -96,54 +104,56 @@ function CodeWindow() {
 
 export function Hero() {
   return (
-    <header className="pb-20 pt-[150px] text-center">
-      <div className="wrap">
-        <span className="inline-flex items-center gap-2.5 rounded-full border border-line-2 bg-white/5 py-[7px] pl-[11px] pr-[15px] text-sm text-muted">
-          <i className="size-[9px] animate-ping-soft rounded-full bg-ok" />
-          {profile.location} · open to new roles
-        </span>
-
-        <h1 className="mb-5 mt-[22px] font-display text-[clamp(46px,9vw,124px)] font-extrabold leading-[0.95] tracking-[-0.045em]">
-          <span className="block overflow-hidden pb-[0.08em]">
-            <span className="inline-block animate-rise">{profile.firstName}</span>
+    <header className="grid min-h-svh items-center pb-[70px] pt-[130px]">
+      <div className="wrap grid items-center gap-x-14 gap-y-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-line-2 bg-white/5 py-[7px] pl-[11px] pr-[15px] text-sm text-muted">
+            <i className="size-[9px] animate-ping-soft rounded-full bg-ok" />
+            {profile.location} · open to new roles
           </span>
-          <span className="block overflow-hidden pb-[0.08em]">
-            <span className="inline-block animate-rise text-accent [animation-delay:0.12s]">{profile.lastName}.</span>
-          </span>
-        </h1>
 
-        <Typewriter words={roles} />
+          <h1 className="mb-5 mt-[22px] font-display text-[clamp(46px,8.4vw,108px)] font-extrabold leading-[0.95] tracking-[-0.045em]">
+            <span className="block overflow-hidden pb-[0.08em]">
+              <span className="inline-block animate-rise">{profile.firstName}</span>
+            </span>
+            <span className="block overflow-hidden pb-[0.08em]">
+              <span className="inline-block animate-rise text-accent [animation-delay:0.12s]">{profile.lastName}.</span>
+            </span>
+          </h1>
 
-        <p className="mx-auto mb-8 mt-[18px] max-w-[36em] text-[clamp(17px,1.5vw,19.5px)] text-muted">{profile.lede}</p>
+          <Typewriter words={roles} />
 
-        <div className="flex flex-wrap justify-center gap-3">
-          <Magnetic>
-            <a href="#projects" className={btn.primary}>
-              See my work <ArrowUpRight className={btn.arrow} />
-            </a>
-          </Magnetic>
-          <Magnetic>
-            <a href="#contact" className={btn.ghost}>
-              Let&apos;s talk
-            </a>
-          </Magnetic>
+          <p className="mb-8 mt-[18px] max-w-[35em] text-[clamp(17px,1.5vw,19.5px)] text-muted">{profile.lede}</p>
+
+          <div className="flex flex-wrap gap-3">
+            <Magnetic>
+              <a href="#projects" className={btn.primary}>
+                See my work <ArrowUpRight className={btn.arrow} />
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a href="#contact" className={btn.ghost}>
+                Let&apos;s talk
+              </a>
+            </Magnetic>
+          </div>
+
+          <dl className="mt-[46px] grid grid-cols-2 gap-x-8 gap-y-6 border-t border-line pt-[26px] sm:grid-cols-3">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <dd className="font-display text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em]">
+                  <Counter value={s.value} />
+                  <span className="text-accent">{s.suffix}</span>
+                </dd>
+                <dt className="mt-1 text-sm leading-snug text-dim">{s.label}</dt>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        <div className="mx-auto mt-16 max-w-[820px]">
+        <div className="mx-auto w-full max-w-[560px] animate-float lg:max-w-none">
           <CodeWindow />
         </div>
-
-        <dl className="mx-auto mt-14 grid max-w-[900px] gap-y-8 sm:grid-cols-3 sm:divide-x sm:divide-line">
-          {stats.map((s) => (
-            <div key={s.label} className="px-6">
-              <dd className="font-display text-[42px] font-extrabold leading-[1.1] tracking-[-0.03em]">
-                <Counter value={s.value} />
-                <span className="text-accent">{s.suffix}</span>
-              </dd>
-              <dt className="mx-auto mt-1 max-w-[16em] text-sm leading-snug text-dim">{s.label}</dt>
-            </div>
-          ))}
-        </dl>
       </div>
     </header>
   );
