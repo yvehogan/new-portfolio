@@ -13,7 +13,7 @@ function Row({ items, reverse }: { items: string[]; reverse?: boolean }) {
           key={i}
           className="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line-2 bg-panel px-5 py-2.5 text-[15px] font-medium text-fg/85"
         >
-          <i className="size-1.5 rounded-full bg-accent" />
+          <i className="size-1.5 rounded-full bg-ok" />
           {item}
         </span>
       ))}

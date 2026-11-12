@@ -111,7 +111,7 @@ export function Projects() {
                       onFocus={() => setActive(i)}
                       className="group flex w-full cursor-pointer items-center gap-4 py-5 text-left sm:gap-6 lg:py-[22px]"
                     >
-                      <span className={`font-mono text-[13px] transition-colors duration-300 ${on ? "text-accent" : "text-dim"}`}>
+                      <span className={`font-mono text-[13px] transition-colors duration-300 ${on ? "text-ok" : "text-dim"}`}>
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span
@@ -150,7 +150,7 @@ export function Projects() {
                 <Cover p={current} />
                 <div className="px-2 pb-2">
                   <p className="mb-3 flex items-center gap-2.5 font-mono text-[12.5px] uppercase tracking-widest text-dim">
-                    <b className="font-medium text-accent">{current.kind}</b>
+                    <b className="font-medium text-ok">{current.kind}</b>
                     <span>·</span>
                     <span>{current.year}</span>
                   </p>

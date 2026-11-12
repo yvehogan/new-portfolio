@@ -32,9 +32,9 @@ export function Typewriter({ words }: { words: string[] }) {
   }, [words]);
 
   return (
-    <p className="min-h-[1.7em] font-mono text-[clamp(15px,1.7vw,19px)] text-accent">
+    <p className="min-h-[1.7em] font-mono text-[clamp(15px,1.7vw,19px)] text-ok">
       <span>{text}</span>
-      <span aria-hidden="true" className="ml-1 inline-block h-[1.05em] w-[0.55em] animate-blink bg-accent align-[-0.15em]" />
+      <span aria-hidden="true" className="ml-1 inline-block h-[1.05em] w-[0.55em] animate-blink bg-ok align-[-0.15em]" />
     </p>
   );
 }

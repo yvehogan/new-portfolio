@@ -6,8 +6,8 @@ import { Magnetic, Tilt } from "./Tilt";
 import { Typewriter } from "./Typewriter";
 import { btn } from "./ui";
 
-const K = ({ children }: { children: ReactNode }) => <span className="text-accent">{children}</span>;
-const S = ({ children }: { children: ReactNode }) => <span className="text-[#b9d6a3]">&quot;{children}&quot;</span>;
+const K = ({ children }: { children: ReactNode }) => <span className="text-accent-soft">{children}</span>;
+const S = ({ children }: { children: ReactNode }) => <span className="text-[#7ddcb4]">&quot;{children}&quot;</span>;
 const P = ({ children }: { children: ReactNode }) => <span className="text-[#8fb8d9]">{children}</span>;
 const C = ({ children }: { children: ReactNode }) => <span className="text-dim">{children}</span>;
 
@@ -143,7 +143,7 @@ export function Hero() {
               <div key={s.label}>
                 <dd className="font-display text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em]">
                   <Counter value={s.value} />
-                  <span className="text-accent">{s.suffix}</span>
+                  <span className="text-ok">{s.suffix}</span>
                 </dd>
                 <dt className="mt-1 text-sm leading-snug text-dim">{s.label}</dt>
               </div>

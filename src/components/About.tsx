@@ -13,7 +13,7 @@ function List({ title, items }: { title: string; items: typeof education }) {
           <li key={item.title + item.org} className="border-l-2 border-line-2 pl-4 transition-colors duration-300 hover:border-accent">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <strong className="font-display text-lg font-semibold tracking-[-0.01em]">{item.title}</strong>
-              {item.period && <time className="font-mono text-[12.5px] text-accent">{item.period}</time>}
+              {item.period && <time className="font-mono text-[12.5px] text-ok">{item.period}</time>}
             </div>
             <p className="text-[15px] text-fg/80">{item.org}</p>
             <p className="mt-1 text-[15px] text-muted">{item.detail}</p>
@@ -67,7 +67,7 @@ export function About() {
             {skills.map((group, i) => (
               <Reveal key={group.title} delay={i * 0.05}>
                 <div className="group grid gap-x-10 gap-y-3 border-b border-line py-7 transition-colors duration-500 hover:border-accent/50 lg:grid-cols-[240px_1fr] lg:items-baseline lg:py-9">
-                  <h4 className="flex items-baseline gap-4 font-mono text-[13px] uppercase tracking-[0.12em] text-dim transition-colors duration-300 group-hover:text-accent">
+                  <h4 className="flex items-baseline gap-4 font-mono text-[13px] uppercase tracking-[0.12em] text-dim transition-colors duration-300 group-hover:text-ok">
                     <span>{String(i + 1).padStart(2, "0")}</span>
                     <span>{group.title}</span>
                   </h4>

@@ -62,7 +62,7 @@ export function Navbar() {
           }`}
         >
           <a href="#top" aria-label={`${profile.fullName}, home`} className="group flex items-center gap-2.5 font-display text-xl font-extrabold tracking-[-0.02em]">
-            <b className="bg-accent grid size-[34px] place-items-center rounded-[11px] text-[17px] text-[#14120a] transition-transform duration-500 ease-spring group-hover:-rotate-12 group-hover:scale-110">
+            <b className="bg-accent grid size-[34px] place-items-center rounded-[11px] text-[17px] text-white transition-transform duration-500 ease-spring group-hover:-rotate-12 group-hover:scale-110">
               E
             </b>
             <span>
@@ -110,7 +110,7 @@ export function Navbar() {
         type="button"
         aria-label="Back to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-[22px] right-[22px] z-[90] grid size-12 cursor-pointer place-items-center rounded-full border border-line-2 bg-[#1c1c1af2] transition duration-300 ease-spring hover:bg-accent hover:text-[#14120a] ${
+        className={`fixed bottom-[22px] right-[22px] z-[90] grid size-12 cursor-pointer place-items-center rounded-full border border-line-2 bg-[#1c1c1af2] transition duration-300 ease-spring hover:bg-accent hover:text-white ${
           showTop ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >

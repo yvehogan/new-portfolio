@@ -4,14 +4,14 @@ const base =
   "group/btn inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border px-[22px] py-[13px] text-[15.5px] font-bold transition duration-300 ease-spring disabled:cursor-not-allowed disabled:opacity-60";
 
 export const btn = {
-  primary: `${base} border-transparent bg-accent text-[#14120a] hover:-translate-y-0.5 hover:bg-accent-soft`,
+  primary: `${base} border-transparent bg-accent text-white hover:-translate-y-0.5 hover:bg-accent-soft`,
   ghost: `${base} border-line-2 bg-white/5 text-fg hover:border-white/40 hover:bg-white/10`,
   arrow: "size-4 transition-transform duration-300 ease-spring group-hover/btn:translate-x-[3px] group-hover/btn:-translate-y-[3px]",
 };
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="flex items-center gap-3 font-mono text-[13.5px] font-medium uppercase tracking-[0.14em] text-accent before:h-px before:w-[34px] before:bg-accent">
+    <p className="flex items-center gap-3 font-mono text-[13.5px] font-medium uppercase tracking-[0.14em] text-ok before:h-px before:w-[34px] before:bg-ok">
       {children}
     </p>
   );
