@@ -17,10 +17,10 @@ export function Hero() {
 
           <h1 className="mb-5 mt-[22px] font-display text-[clamp(46px,8.4vw,108px)] font-extrabold leading-[0.95] tracking-[-0.045em]">
             <span className="block overflow-hidden pb-[0.08em]">
-              <span className="inline-block translate-y-[110%] animate-rise">{profile.firstName}</span>
+              <span className="inline-block animate-rise">{profile.firstName}</span>
             </span>
             <span className="block overflow-hidden pb-[0.08em]">
-              <span className="text-accent inline-block translate-y-[110%] animate-rise [animation-delay:0.12s]">
+              <span className="text-accent inline-block animate-rise [animation-delay:0.12s]">
                 {profile.lastName}.
               </span>
             </span>
